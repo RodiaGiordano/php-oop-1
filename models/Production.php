@@ -19,8 +19,17 @@ class Production {
         $this->genre = $genre;
     }
     
+    public function getDetails()
+    {
+        return "
+        <li><strong>Titolo:</strong> $this->name</li>
+        <li><strong>Lingua:</strong> $this->language</li>
+        <li><strong>Genere:</strong> {$this->genre->genre}</li>
+        ";
+    }
+    }
    
-}
+
 
 
 ?>

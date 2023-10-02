@@ -24,17 +24,15 @@
 <body>
     <div class="container">
         <div class="row flex-wrap gap-3 mt-5 m-auto">
-            <?php foreach($filmsArray as $film): ?>
+            <?php foreach($filmsArray as $element): ?>
                 <div class="card" style="width: 18rem;">
                     <ul class="list-group list-group-flush">
                     
-                        <li class="list-group-item"><?= "Titolo: " . $film->name; ?></li>
-                        <li class="list-group-item"><?= "Linga originale: " . $film->language ?></li>
-                        <li class="list-group-item"><?= "Genere: " . $film->genre->genre ?></li>  
+                        <?= $element->getDetails() ?>  
 
                     </ul>
                 </div>
-            <?php endforeach ?>;
+            <?php endforeach ?>
 
             
         </div>
