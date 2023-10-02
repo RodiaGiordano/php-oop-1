@@ -15,10 +15,22 @@ class Movie extends Production {
         parent::__construct($name, $language, $genre);
 
         $this-> published_year = $published_year;
-        $this-> running_time = $running_time;
+        $this-> setTime($running_time);
     }
 
-   
+   public function setTime($running_time){
+    
+        $hour = floor($running_time / 60);
+        
+        $minut = fmod($running_time, 60);
+    
+        $running_time = $hour . "h " . $minut . "m";
+    
+        $this->running_time = $running_time;
+    
+    
+
+   }
 
     public function getDetails()
     {
@@ -27,7 +39,7 @@ class Movie extends Production {
         <li class='list-group-item'><strong>Lingua:</strong> $this->language</li>
         <li class='list-group-item'><strong>Genere:</strong> {$this->genre->genre}</li>
         <li class='list-group-item'><strong>Anno pubblicazione:</strong> $this->published_year</li>
-        <li class='list-group-item'><strong>Durata:</strong> $this->running_time minuti</li>
+        <li class='list-group-item'><strong>Durata:</strong> $this->running_time</li>
         ";
     }
     }
