@@ -1,5 +1,8 @@
 <?php 
-    require_once __DIR__ . './db.php'
+    include __DIR__ . './db.php';
+
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -26,13 +29,14 @@
                     <ul class="list-group list-group-flush">
                     
                         <li class="list-group-item"><?= "Titolo: " . $film->name; ?></li>
-                        <li class="list-group-item"><?= "Anno di uscita: " . $film->yearRelease ?></li>
                         <li class="list-group-item"><?= "Linga originale: " . $film->language ?></li>
                         <li class="list-group-item"><?= "Genere: " . $film->genre->genre ?></li>  
 
                     </ul>
                 </div>
-            <?php endforeach ?>
+            <?php endforeach ?>;
+
+            
         </div>
     </div>
 </body>

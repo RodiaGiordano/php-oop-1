@@ -2,32 +2,22 @@
 
 <?php 
 
-include __DIR__ . "./genre.php";
 
 
-class Movie {
+class Movie extends Production {
 
-    public $name;
-
-    public $yearRelease;
-
-    public $language;
-
-    public $genre;
+    public $published_year;
+    public $running_time;
 
     
-    public function __construct($name, $yearRelease, $language, Genre $genre)
+    public function __construct($name, $language, $genre, $published_year, $running_time)
     {
-        $this->name = $name;
-        $this->yearRelease = $yearRelease;
-        $this->language = $language;
-        $this->genre = $genre;
+        parent::__construct($name, $language, $genre);
+
+        $this-> published_year = $published_year;
+        $this-> running_time = $running_time;
     }
-    
-    public function getFullInfo(){
-        return "$this->name - {$this->genre->genre} - $this->yearRelease - $this->language";
-        
-    }
+
 }
 
 
