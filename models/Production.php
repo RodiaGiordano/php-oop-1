@@ -1,7 +1,7 @@
 <?php  
-include __DIR__ . "./genre.php";
-include __DIR__ . "./movie.php";
-include __DIR__ . "./serieTv.php";
+include_once __DIR__ . "/genre.php";
+include_once __DIR__ . "/movie.php";
+include_once __DIR__ . "/serieTv.php";
 
 
 
@@ -19,15 +19,17 @@ class Production {
     {
         $this->name = $name;
         $this->language = $language;
-        $this->genre = $genre;
+        $this->genre = implode('/', $genre->genre);
     }
+
+   
     
     public function getDetails()
     {
         return "
         <li class='list-group-item'><strong>Titolo:</strong> $this->name</li>
         <li class='list-group-item'><strong>Lingua:</strong> $this->language</li>
-        <li class='list-group-item'><strong>Genere:</strong> {$this->genre->genre}</li>
+        <li class='list-group-item'><strong>Genere:</strong> {$this->genre}</li>
         ";
 
     }

@@ -1,7 +1,7 @@
 
 <?php 
 
-require_once __DIR__ . "./traits.php";
+include __DIR__ . "/traits.php";
 
 class Movie extends Production {
 
@@ -42,6 +42,7 @@ class Movie extends Production {
         <li class='list-group-item'><strong>Anno pubblicazione:</strong> $this->published_year</li>
         <li class='list-group-item'><strong>Durata:</strong> $this->running_time</li>
         <li class='list-group-item'><strong>Regista:</strong> $this->director</li>
+        <li class='list-group-item'><strong>Genere:</strong> {$this->genre}</li>
         ";
     }
     }

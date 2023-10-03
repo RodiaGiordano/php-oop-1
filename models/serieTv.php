@@ -1,5 +1,7 @@
 <?php  
 
+include_once __DIR__ . "/traits.php";
+
 
 class SerieTv extends Production {
 
