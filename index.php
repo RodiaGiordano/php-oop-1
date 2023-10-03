@@ -31,8 +31,10 @@
                         <?= $element->getDetails() ?>  
 
                     </ul>
+
                 </div>
             <?php endforeach ?>
+                
 
             
         </div>

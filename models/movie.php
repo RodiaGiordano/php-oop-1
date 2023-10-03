@@ -34,10 +34,9 @@ class Movie extends Production {
 
     public function getDetails()
     {
-        return "
-        <li class='list-group-item'><strong>Titolo:</strong> $this->name</li>
-        <li class='list-group-item'><strong>Lingua:</strong> $this->language</li>
-        <li class='list-group-item'><strong>Genere:</strong> {$this->genre->genre}</li>
+        return
+        parent::getDetails() . "
+        
         <li class='list-group-item'><strong>Anno pubblicazione:</strong> $this->published_year</li>
         <li class='list-group-item'><strong>Durata:</strong> $this->running_time</li>
         ";
